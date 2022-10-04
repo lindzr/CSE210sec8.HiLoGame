@@ -31,5 +31,8 @@ public class dealer
 
 public class deck
 {
-    
+    //make a list of lists OR a dictionary with numbers 1-13 in each suit
+    // "spades", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+    //etc.
 }
+
