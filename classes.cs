@@ -4,17 +4,32 @@ public class dealer
 
     public int calculateNewScore(previousCard,newCard,userGuess)
     {
-        string guess = userGuess;
+
         if (previousCard < newCard)
         {
-            score =+ 100;
+            string correctGuess = "higher";
         }
         else
         {
+            string correctGuess = "lower";
+        }
+
+        if (userGuess == correctGuess)
+        {
+            score += 100;
+        }
+        else if (userGuess != correctGuess)
+        {
             score -= 75;
         }
+
         return score;
     }
 
-    public 
+
+}
+
+public class deck
+{
+    
 }
