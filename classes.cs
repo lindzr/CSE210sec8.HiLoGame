@@ -26,5 +26,10 @@ public class dealer
         return score;
     }
 
-    public 
+
+}
+
+public class deck
+{
+    
 }
