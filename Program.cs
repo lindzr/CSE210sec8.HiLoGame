@@ -1,17 +1,37 @@
-﻿int currentCard = 0;
-int newCard = 0;
-int score = 300;
-string play = "";
+﻿class Program {
 
-do
-{
-    Console.WriteLine($"The card is: {currentCard}");
-    Console.WriteLine("Higher or Lower [h/l]? ");
-    string userGuess = Console.ReadLine() ?? "";
-    Console.WriteLine($"Next card was: {newCard}");
-    Console.WriteLine($"Your score is: {score}");
-    Console.WriteLine("Play again? [y/n] ");
-    play = Console.ReadLine() ?? "";
-}while (play == "y");
+    static void Main(string[] args) {
+        DisplayWelcomeMessage();
 
-Console.WriteLine("Thanks for playing!");
+        // Create a new Deck object
+        Deck deckOfCards = new Deck();
+
+        // Loop continuously until the deck no longer has any cards
+        while (deckOfCards.HasMoreCards()) {
+
+            // Draw a random card from the deck
+            Card randomCard = deckOfCards.DrawRandomCard();
+            
+            // Print the card description to the console
+            Console.WriteLine(randomCard.Description());
+
+            // Wait .25 seconds so that this process goes slowly
+            Thread.Sleep(250);
+        }
+
+        Console.WriteLine("");
+        Console.WriteLine("The Deck is now out of cards...");
+        Console.WriteLine("This concludes our demo. Have a nice day!");
+    }
+
+    static void DisplayWelcomeMessage() {
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("############################");
+        Console.WriteLine("Deck of Cards demo commence!");
+        Console.WriteLine("############################");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("");
+    }
+}
