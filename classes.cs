@@ -33,18 +33,7 @@ public class dealer
 public class deck
 {
         //make a loop to create 52 cards
-        List<card> deckofcards = new List<card>();
-
-    enum number {
-        1, 2, 3, 4, etc
-    }
-
-    enum suit {
-        Hearts,
-        Spades,
-        Clubs,
-        Diamonds,
-    }
+        
 }
 
 
