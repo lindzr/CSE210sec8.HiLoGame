@@ -20,7 +20,7 @@
             Card newCard = deckOfCards.DrawRandomCard();
             
             // Print the card description to the console
-            Console.WriteLine(randomCard.Description());
+            Console.WriteLine(newCard.Description());
 
         } while (deckOfCards.HasMoreCards());
 
