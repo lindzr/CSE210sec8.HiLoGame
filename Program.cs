@@ -9,20 +9,25 @@
         // Loop continuously until the deck no longer has any cards
         do 
         {   
+            string currentCard = deckOfCards.DrawRandomCard();
             Console.WriteLine($"The card is: {currentCard}");
             Console.WriteLine("Higher or Lower [h/l]? ");
             string userGuess = Console.ReadLine() ?? "";
+            Card newCard = deckOfCards.DrawRandomCard();
             Console.WriteLine($"Next card was: {newCard}");
-            Console.WriteLine($"Your score is: {score}");
+            Console.WriteLine($"Your score is: {calculateNewScore(currentCard,newCard,userGuess)}");
             Console.WriteLine("Play again? [y/n] ");
             play = Console.ReadLine() ?? "";
+<<<<<<< HEAD
             // Draw a random card from the deck
             Card newCard = deckOfCards.DrawRandomCard();
             
             // Print the card description to the console
             Console.WriteLine(newCard.Description());
+=======
+>>>>>>> 5b9c76c7a3ee72273c44e89a6780743fa1810499
 
-        } while (deckOfCards.HasMoreCards());
+        } while (deckOfCards.HasMoreCards() && play == "y");
 
         Console.WriteLine("");
     }
