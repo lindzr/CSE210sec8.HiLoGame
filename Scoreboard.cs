@@ -1,4 +1,4 @@
-public class Score
+public class Scoreboard
 {
     public int score = 300;
 
@@ -26,5 +26,17 @@ public class Score
         }
 
         return score;
+    }
+
+    public bool checkScore(int score)
+    {
+        if (score > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

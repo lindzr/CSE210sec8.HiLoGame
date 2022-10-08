@@ -1,7 +1,7 @@
 class Card {
 
-    string suit;
-    int number;
+    public string suit;
+    public int number;
 
     public Card(string s, int n) {
         suit = s;
