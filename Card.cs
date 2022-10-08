@@ -1,3 +1,4 @@
+// creates card class to be passed to the deck class. Each card has a suit and value attached to it
 class Card {
 
     public string suit;
