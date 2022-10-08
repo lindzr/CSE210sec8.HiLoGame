@@ -3,30 +3,39 @@
     static void Main(string[] args) {
         DisplayWelcomeMessage();
 
-        // Create a new Deck object
         Deck deckOfCards = new Deck();
+        Score score = new Score();
+        string play = "";
 
-        // Loop continuously until the deck no longer has any cards
         do 
         {   
-            string currentCard = deckOfCards.DrawRandomCard();
-            Console.WriteLine($"The card is: {currentCard}");
+            if (play == "y")
+            {
+                currentCard = newCard;
+                newCard = deckOfCards.DrawRandomCard();
+            }
+            else
+            {
+                Card currentCard = deckOfCards.DrawRandomCard();
+                Card newCard = deckOfCards.DrawRandomCard();
+            }
+            
+            Console.WriteLine($"The card is: {currentCard.Description()}");
+            
             Console.WriteLine("Higher or Lower [h/l]? ");
             string userGuess = Console.ReadLine() ?? "";
-            Card newCard = deckOfCards.DrawRandomCard();
-            Console.WriteLine($"Next card was: {newCard}");
-            Console.WriteLine($"Your score is: {calculateNewScore(currentCard,newCard,userGuess)}");
+            
+            Console.WriteLine($"Next card was: {newCard.Description()}");
+            
+            Console.WriteLine($"Your score is: {score.calculateNewScore(currentCard.number(),newCard.number(),userGuess)}");
+            
             Console.WriteLine("Play again? [y/n] ");
             play = Console.ReadLine() ?? "";
-            // Draw a random card from the deck
-            Card newCard = deckOfCards.DrawRandomCard();
-            
-            // Print the card description to the console
-            Console.WriteLine(newCard.Description());
 
         } while (deckOfCards.HasMoreCards() && play == "y");
 
         Console.WriteLine("");
+        Console.WriteLine("Thank you for playing.");
     }
 
     static void DisplayWelcomeMessage() {

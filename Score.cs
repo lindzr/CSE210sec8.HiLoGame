@@ -2,16 +2,18 @@ public class Score
 {
     public int score = 300;
 
-    public int calculateNewScore(previousCard,newCard,userGuess)
+    public int calculateNewScore(int previousCard, int newCard, string userGuess)
     {
+
+        string correctGuess = "";
 
         if (previousCard < newCard)
         {
-            string correctGuess = "higher";
+            correctGuess = "h";
         }
         else
         {
-            string correctGuess = "lower";
+            correctGuess = "l";
         }
 
         if (userGuess == correctGuess)
